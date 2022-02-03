@@ -20,6 +20,7 @@ header {
 }
 
 .but{
+  cursor: pointer;
   color:#7bb2e8;
   padding: 3px;
   width:70px;
@@ -38,6 +39,7 @@ header {
 }
 
 .buttonGlass {
+  cursor: pointer;
   position: relative;
   display: inline-block;
   color: #777674;
