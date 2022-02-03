@@ -20,7 +20,6 @@ header {
 }
 
 .but{
-  cursor: pointer;
   color:#7bb2e8;
   padding: 3px;
   width:70px;
@@ -32,6 +31,7 @@ header {
   transition: all .25s ease-in;
   font: 400 14px "Times New Roman";
   border: 1px solid #7bb2e8;
+  cursor: pointer;
 }
 .but:hover {
   background-position: 0 0;
