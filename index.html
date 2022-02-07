@@ -23,11 +23,11 @@
 
 <body>
 <header>
-  <button class="headerButton" style="position:absolute; top: 22px; left: 200px; padding: 3px 3px">New page1</button>
-  <button class="headerButton" style="position:absolute; top: 22px; left: 300px; padding: 3px 3px">New page2</button>
-  <button class="headerButton" style="position:absolute; top: 22px; left: 400px; padding: 3px 3px">New page3</button>
-  <button class="headerButton" style="position:absolute; top: 22px; left: 500px; padding: 3px 3px">New page4</button>
-  <button class="headerButton" style="position:absolute; top: 22px; left: 600px; padding: 3px 3px">New page5</button>
+<!--  <button class="headerButton" style="position:absolute; top: 22px; left: 200px; padding: 3px 3px">New page1</button>-->
+<!--  <button class="headerButton" style="position:absolute; top: 22px; left: 300px; padding: 3px 3px">New page2</button>-->
+<!--  <button class="headerButton" style="position:absolute; top: 22px; left: 400px; padding: 3px 3px">New page3</button>-->
+<!--  <button class="headerButton" style="position:absolute; top: 22px; left: 500px; padding: 3px 3px">New page4</button>-->
+<!--  <button class="headerButton" style="position:absolute; top: 22px; left: 600px; padding: 3px 3px">New page5</button>-->
 </header>
 </body>
 
@@ -37,23 +37,23 @@
   <tr>
     <td colspan="4" id="person">
       <div style="position:relative; width:700px; height:190px; padding:0px;" >
-        <img src="img/StonesTrolley.gif" id="mob1" width="56" height="56" style="position:absolute; top: 71px; left: 21px;" />
-        <img src="img/StonesTrolley.gif" id="mob2" width="56" height="56"  style="position:absolute; top: 71px; left: 622px;"/>
+        <img src="img/EmptyTrolley.gif" id="mob1" width="56" height="50" style="position:absolute; top: 77px; left: 21px;" />
+        <img src="img/EmptyTrolley.gif" id="mob2" width="56" height="50"  style="position:absolute; top: 77px; left: 622px;"/>
         <img src="img/Ruler.jpg" style="position: absolute; top: auto;">
       </div>
     </td>
   </tr>
   <tr>
-    <td width="170">X<sub>1</sub> = <span id="x1">00</span> см</td>
-    <td width="170">X<sub>2</sub> = <span id="x2">00</span> см</td>
-    <td width="170">X<sub>3</sub> = <span id="x3">00</span> см</td>
-    <td width="170">X<sub>4</sub> = <span id="x4">00</span> см</td>
+    <td width="170">X<sub>1</sub> = <span id="x1">0</span> см</td>
+    <td width="170">X<sub>2</sub> = <span id="x2">0</span> см</td>
+    <td width="170">X<sub>3</sub> = <span id="x3">0</span> см</td>
+    <td width="170">X<sub>4</sub> = <span id="x4">0</span> см</td>
   </tr>
   <tr>
-    <td>t<sub>1</sub> = <span id="t1"> 0.0</span> с</td>
-    <td>t<sub>2</sub> = <span id="t2"> 0.0</span> с</td>
-    <td>t<sub>3</sub> = <span id="t3"> 0.0</span> с</td>
-    <td>t<sub>4</sub> = <span id="t4"> 0.0</span> с</td>
+    <td>t<sub>1</sub> = <span id="t1"> 0</span> с</td>
+    <td>t<sub>2</sub> = <span id="t2"> 0</span> с</td>
+    <td>t<sub>3</sub> = <span id="t3"> 0</span> с</td>
+    <td>t<sub>4</sub> = <span id="t4"> 0</span> с</td>
   </tr>
   <tr>
     <td><label>m<sub>1</sub> =
@@ -66,7 +66,7 @@
       </select> г
     </label>
     </td>
-    <td><button class="buttonGlass" onclick="clean(); sto=0; start();">ПУСК</button></td>
+    <td><button class="buttonGlass" onclick="clean(); stopSignal=0; start();">ПУСК</button></td>
     <td><button class="buttonGlass" onclick="clean();">СБРОС</button></td>
     <td><label>m<sub>2</sub> =
       <select name="m2" id="m2" style="width:60px">
@@ -75,21 +75,13 @@
         <option value="300">300</option>
         <option value="400">400</option>
         <option value="500">500</option>
-      </select> г
+      </select>
     </label>
     </td>
   </tr>
 </table>
 
-
-<!--  <script src="js/vendor/modernizr-3.11.2.min.js"></script>-->
-<!--  <script src="js/plugins.js"></script>-->
   <script src="js/main.js"></script>
-
-
-
-
-
 
 </body>
 
