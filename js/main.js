@@ -59,73 +59,67 @@ function changeCoordinates() {
   } // Движение тележек до столкновения
 
   else{
+    document.getElementById('x1').innerHTML = x1_end;
+    document.getElementById('x3').innerHTML = x3_end;
 
-  document.getElementById('x1').innerHTML = x1_end;
-  document.getElementById('x3').innerHTML = x3_end;
+    if((Math.round((digit2 + (second/10 - digit1)*V3)*100) >0)&&
+      (Math.round((digit2 + (second/10 - digit1)*V3)*100) < 100)) {
+      document.getElementById('t2').innerHTML=Math.round(second - digit1*10)/10;
+      document.getElementById('mob1').style.left= 21 + 546*(digit2 + (second/10 - digit1)*V3) +'px';
+      document.getElementById('x2').innerHTML=Math.round(doublesecond*V3*10);
 
+    } // Движение 1 тележки после удара
 
-  if((Math.round((digit2 + (second/10 - digit1)*V3)*100) >0)&&(Math.round((digit2 + (second/10 - digit1)*V3)*100) < 100)) {
+    if(Math.round((digit2 + (second/10 - digit1)*V3)*100) <= 0) {
 
-    document.getElementById('t2').innerHTML=Math.round(second - digit1*10)/10;
-    document.getElementById('mob1').style.left= 21 + 546*(digit2 + (second/10 - digit1)*V3) +'px';
-    document.getElementById('x2').innerHTML=Math.round(doublesecond*V3*10);
+      document.getElementById('mob1').style.left= 21 + 'px';
+      document.getElementById('t2').innerHTML=-Math.round(digit2*10/V3)/10;
+      document.getElementById('x2').innerHTML=-(x1_end);
 
-  } // Движение 1 тележки после удара
+    } // Движение 1 тележки в левую стенку
 
-  if(Math.round((digit2 + (second/10 - digit1)*V3)*100) <= 0) {
+    if(Math.round((digit2 + (second/10 - digit1)*V3)*100) >= 100) {
 
-    document.getElementById('mob1').style.left= 21 + 'px';
-    document.getElementById('t2').innerHTML=-Math.round(digit2*10/V3)/10;
-    document.getElementById('x2').innerHTML=-(x1_end);
+      document.getElementById('mob1').style.left= 567 + 'px';
+      document.getElementById('t2').innerHTML=Math.round((1-digit2)*10/V3)/10;
+      document.getElementById('x2').innerHTML=100 - x1_end;
 
-  } // Движение 1 тележки в левую стенку
+    } // Движение 1 тележки в правую стенку
 
-  if(Math.round((digit2 + (second/10 - digit1)*V3)*100) >= 100) {
+    if((Math.round((digit2 + (second/10 - digit1)*V4)*100) >0)&&
+      (Math.round((digit2 + (second/10 - digit1)*V4)*100) < 100)) {
+      document.getElementById('t4').innerHTML=Math.round(second - digit1*10)/10;
+      document.getElementById('mob2').style.left= 77 + 546*(digit2 + (second/10 - digit1)*V4) +'px';
+      document.getElementById('x4').innerHTML=Math.round(doublesecond*V4*10);
 
-    document.getElementById('mob1').style.left= 567 + 'px';
-    document.getElementById('t2').innerHTML=Math.round((1-digit2)*10/V3)/10;
-    document.getElementById('x2').innerHTML=100 - x1_end;
+    } // Движение 2 тележки после удара
 
-  } // Движение 1 тележки в правую стенку
+    if(Math.round((digit2 + (second/10 - digit1)*V4)*100) <= 0) {
 
+      document.getElementById('mob2').style.left= 76 + 'px';
+      document.getElementById('t4').innerHTML=-Math.round(digit2*10/V4)/10;
+      document.getElementById('x4').innerHTML=-x1_end;
 
+    } // Движение 2 тележки в левую стенку
 
-  if((Math.round((digit2 + (second/10 - digit1)*V4)*100) >0)&&(Math.round((digit2 + (second/10 - digit1)*V4)*100) < 100)) {
+    if(Math.round((digit2 + (second/10 - digit1)*V4)*100) >= 100) {
 
-    document.getElementById('t4').innerHTML=Math.round(second - digit1*10)/10;
-    document.getElementById('mob2').style.left= 77 + 546*(digit2 + (second/10 - digit1)*V4) +'px';
-    document.getElementById('x4').innerHTML=Math.round(doublesecond*V4*10);
+      document.getElementById('mob2').style.left= 622 + 'px';
+      document.getElementById('t4').innerHTML=Math.round((1-digit2)*10/V4)/10;
+      document.getElementById('x4').innerHTML=100 - x1_end;
 
-  } // Движение 2 тележки после удара
+    } // Движение 2 тележки в правую стенку
 
-  if(Math.round((digit2 + (second/10 - digit1)*V4)*100) <= 0) {
+    doublesecond++;
 
-    document.getElementById('mob2').style.left= 76 + 'px';
-    document.getElementById('t4').innerHTML=-Math.round(digit2*10/V4)/10;
-    document.getElementById('x4').innerHTML=-x1_end;
+  } // Движение тележек после столкновения
 
-  } // Движение 2 тележки в левую стенку
+    if((second===1200)||(stopSignal===1)){
+      return false;
+    } // Проверка stop-сигнала
 
-  if(Math.round((digit2 + (second/10 - digit1)*V4)*100) >= 100) {
+    second++;
 
-    document.getElementById('mob2').style.left= 622 + 'px';
-    document.getElementById('t4').innerHTML=Math.round((1-digit2)*10/V4)/10;
-    document.getElementById('x4').innerHTML=100 - x1_end;
-
-  } // Движение 2 тележки в правую стенку
-
-  doublesecond++;
-
-} // Движение тележек после столкновения
-
-  if((second===1200)||(stopSignal===1)){
-
-    return false;
-
-  } // Проверка stop-сигнала
-
-  second++;
-
-  setTimeout("changeCoordinates()", 100); // Задержка вызова метода
+    setTimeout("changeCoordinates()", 100); // Задержка вызова метода
 
 } // Метод, с помощью которого меняются координаты у тележек
